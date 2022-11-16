@@ -22,7 +22,7 @@ public class ITEM : MonoBehaviour
     if (cor.CompareTag("Player"))
     {
       Destroy(heal.gameObject);
-      Debug.Log("HIT");
+      Debug.Log("Is HIT");
       for (int i = 0; i < inventory.slot.Length; i++)
       {
           if (inventory.isFull[i] == false)

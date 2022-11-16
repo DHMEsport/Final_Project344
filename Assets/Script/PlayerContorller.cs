@@ -69,7 +69,7 @@ public class PlayerContorller : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             gc.UpdateHeal(-healdown);
-            Debug.Log("HIT");
+            Debug.Log("HIT Enemy");
         }
     }
 }

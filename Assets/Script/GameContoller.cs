@@ -23,12 +23,12 @@ public class GameContoller : MonoBehaviour
 
     public void UpdateHealLive()
     {
-        Debug.Log(heal);
+        Debug.Log($"You have heal" +heal);
     }
 
     public void UpdateLive()
     {
-        Debug.Log(live);
+        Debug.Log($"Your live " + live);
     }
 
     public void Heal()

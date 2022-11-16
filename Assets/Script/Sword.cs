@@ -27,7 +27,7 @@ public class Sword : MonoBehaviour
             {
                 Destroy(Enemy.gameObject);
             }
-            Debug.Log(healmax);
+            Debug.Log($"is a heal" + healmax);
         }
     }
 }
