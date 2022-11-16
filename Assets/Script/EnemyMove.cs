@@ -42,7 +42,6 @@ public class EnemyMove : MonoBehaviour
     if (col.CompareTag("Player"))
     {
       gc.UpdateHeal(-healdown);
-      Destroy(Enemy.gameObject);
       Debug.Log("HIT");
     }
     

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-   private Inventory _inventory;
-   public int item;
+   private Inventory _inventory; 
+   private int i;
  
    private void Start()
    {
@@ -17,7 +17,7 @@ public class DropItem : MonoBehaviour
    {
       if (transform.childCount<=0)
       {
-         _inventory.isFull[item] = false;
+         _inventory.isFull[i] = false;
       }
    }
 

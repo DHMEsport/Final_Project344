@@ -11,7 +11,6 @@ public class ITEM : MonoBehaviour
   private Inventory inventory;
   public GameObject itemButtom;
   private TextMeshPro text;
-  private Inventory mitemtopickup = null;
   private void Start()
   {
     inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
