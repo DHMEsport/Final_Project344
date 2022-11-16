@@ -5,13 +5,20 @@ using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
 {
-    private InventoryItemBase mCurrentItem = null;
     [SerializeField]  private int _speed;
     [SerializeField] private int _rotationspeed;
     [SerializeField] private int _speedRun;
+    [SerializeField] private int healdown;
+    [SerializeField] private EnemyMove _enemyMove;
     private Animator _animator;
+    private GameContoller gc;
   private void Start()
     {
+        GameObject go = GameObject.FindGameObjectWithTag("GameController");
+        if (go != null)
+        {
+            gc = go.GetComponent<GameContoller>();
+        }
         _animator = GetComponent<Animator>();
     }
     void Update()
@@ -57,4 +64,12 @@ public class PlayerContorller : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            gc.UpdateHeal(-healdown);
+            Debug.Log("HIT");
+        }
+    }
 }

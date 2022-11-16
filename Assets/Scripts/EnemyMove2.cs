@@ -11,6 +11,7 @@ public class EnemyMove2 : MonoBehaviour
     [SerializeField] private Transform[] patrolPoint;
     [SerializeField] private float waittime;
     private int currentPointIndex;
+    private int destinationPoint = 0;
     private bool once;
     private void Update()
     {
@@ -27,6 +28,9 @@ public class EnemyMove2 : MonoBehaviour
             }
          
         }
+
+        destinationPoint = (destinationPoint + 1) % patrolPoint.Length;
+
     }
 
     private void OnDrawGizmos()

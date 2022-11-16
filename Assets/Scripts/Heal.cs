@@ -1,28 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Heal : MonoBehaviour
 {
-    [SerializeField] private GameObject Box;
-    [SerializeField] private int healup = 50;
-    private GameContoller gc;
-    private void Start()
-    {
-        GameObject go = GameObject.FindGameObjectWithTag("GameController");
-        if (go != null)
-        {
-            gc = go.GetComponent<GameContoller>();
-        }
-    }
-
+    [SerializeField] private GameObject heal;
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Player"))
         {
-            gc.UpdateHeal(+healup);
-            gc.UpdateLive(0);
-            Destroy(Box.gameObject);
+            Destroy(heal.gameObject);
             Debug.Log("HIT");
         }
     }
